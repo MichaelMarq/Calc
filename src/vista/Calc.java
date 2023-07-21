@@ -19,8 +19,10 @@ public class Calc extends JFrame{
     private JMenu jMenu;
     private JMenuItem jItemCalEstandar,jItemCalDivisa,jItemSalir;
     
-    //Objeto de la clase divisa
-    Divisa divisa = new Divisa();
+    public static void main(String [] args){
+        Calc calculadora = new Calc();
+        calculadora.setVisible(true);
+    }
     
     
     //Constructor
@@ -135,8 +137,6 @@ public class Calc extends JFrame{
     
     
     
-    
-    
     //Evento abrir la ventana de divisa
     private void eventoItemDivisa(){
         
@@ -148,6 +148,8 @@ public class Calc extends JFrame{
 
             @Override
             public void mousePressed(MouseEvent e) {
+                //Objeto de la clase divisa
+                Divisa divisa = new Divisa();
                 
                 divisa.setVisible(true);
                 dispose();
