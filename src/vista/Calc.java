@@ -19,12 +19,6 @@ public class Calc extends JFrame{
     private JMenu jMenu;
     private JMenuItem jItemCalEstandar,jItemCalDivisa,jItemSalir;
     
-    public static void main(String [] args){
-        Calc calculadora = new Calc();
-        calculadora.setVisible(true);
-    }
-    
-    
     //Constructor
     
     public Calc(){
