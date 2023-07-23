@@ -18,8 +18,6 @@ public class Divisa extends JFrame{
     private JMenu jMenu;
     private JMenuItem jItemCalEstandar,jItemCalDivisa,jItemSalir;
     
-    //Objeto de la clase Calc
-    Calc calc = new Calc();
     
     //Constructor
     
@@ -75,12 +73,13 @@ public class Divisa extends JFrame{
         jItemCalDivisa = new JMenuItem("Conversor de Divisas");
         jItemCalDivisa.setFont(new Font("Arial Rounded MT Bold", 0, 15));
         jMenu.add(jItemCalDivisa);
+        jMenu.addSeparator();
         
         jItemSalir = new JMenuItem("Salir");
         jItemSalir.setFont(new Font("Arial Rounded MT Bold", 0, 15));
         jMenu.add(jItemSalir);
         
-        //eventoItemEstandar();
+        eventoItemEstandar();
         eventoItemSalir();
          
     }
@@ -140,6 +139,9 @@ public class Divisa extends JFrame{
 
             @Override
             public void mousePressed(MouseEvent e) {
+                //Objeto de la clase Calc
+                Calc calc = new Calc();
+                
                 calc.setVisible(true);
                 dispose();
             }

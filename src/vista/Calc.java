@@ -73,6 +73,7 @@ public class Calc extends JFrame{
         jItemCalDivisa = new JMenuItem("Conversor de Divisas");
         jItemCalDivisa.setFont(new Font("Arial Rounded MT Bold", 0, 15));
         jMenu.add(jItemCalDivisa);
+        jMenu.addSeparator();
         
         jItemSalir = new JMenuItem("Salir");
         jItemSalir.setFont(new Font("Arial Rounded MT Bold", 0, 15));
