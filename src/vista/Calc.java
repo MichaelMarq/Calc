@@ -29,6 +29,7 @@ public class Calc extends JFrame{
     private JMenuItem jItemCalEstandar,jItemCalDivisa,jItemSalir;
     private GridBagLayout design;
     private GridBagConstraints c;
+    private String cadenaNumeros = "";
     
     //Constructor
     
@@ -419,6 +420,19 @@ public class Calc extends JFrame{
         c.weightx = 0.5;
         c.weighty = 0.5;
         jPanel.add(btnIgual, c);
+        
+        
+        //Eventos de los botones
+        eventoBtn0();
+        eventoBtn1();
+        eventoBtn2();
+        eventoBtn3();
+        eventoBtn4();
+        eventoBtn5();
+        eventoBtn6();
+        eventoBtn7();
+        eventoBtn8();
+        eventoBtn9();
     }
     
     //Etiqueta resultado
@@ -540,6 +554,357 @@ public class Calc extends JFrame{
         };
          
         jItemCalDivisa.addMouseListener(evento);
+        
+    }
+    
+    private void eventoBtn0(){
+        MouseListener evento = new MouseListener(){
+            @Override
+            public void mouseClicked(MouseEvent e) {
+               
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                if(cadenaNumeros != ""){
+                    cadenaNumeros += "0";
+                    jlNumero.setText(cadenaNumeros);
+                }
+                
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                
+            }
+            
+        };
+        
+        btn0.addMouseListener(evento);
+        
+        
+    }
+    private void eventoBtn1(){
+        MouseListener evento = new MouseListener(){
+            @Override
+            public void mouseClicked(MouseEvent e) {
+               
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                cadenaNumeros += "1";
+                jlNumero.setText(cadenaNumeros);
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                
+            }
+            
+        };
+        
+        btn1.addMouseListener(evento);
+        
+        
+    }
+    
+    private void eventoBtn2(){
+        MouseListener evento = new MouseListener(){
+            @Override
+            public void mouseClicked(MouseEvent e) {
+               
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                cadenaNumeros += "2";
+                jlNumero.setText(cadenaNumeros);
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                
+            }
+            
+        };
+        
+        btn2.addMouseListener(evento);
+           
+    }
+    
+    private void eventoBtn3(){
+        MouseListener evento = new MouseListener(){
+            @Override
+            public void mouseClicked(MouseEvent e) {
+               
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                cadenaNumeros += "3";
+                jlNumero.setText(cadenaNumeros);
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                
+            }
+            
+        };
+        
+        btn3.addMouseListener(evento);
+        
+        
+    }
+    
+    private void eventoBtn4(){
+        MouseListener evento = new MouseListener(){
+            @Override
+            public void mouseClicked(MouseEvent e) {
+               
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                cadenaNumeros += "4";
+                jlNumero.setText(cadenaNumeros);
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                
+            }
+            
+        };
+        
+        btn4.addMouseListener(evento);
+        
+        
+    }
+    
+    private void eventoBtn5(){
+        MouseListener evento = new MouseListener(){
+            @Override
+            public void mouseClicked(MouseEvent e) {
+               
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                cadenaNumeros += "5";
+                jlNumero.setText(cadenaNumeros);
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                
+            }
+            
+        };
+        
+        btn5.addMouseListener(evento);
+        
+        
+    }
+    
+    private void eventoBtn6(){
+        MouseListener evento = new MouseListener(){
+            @Override
+            public void mouseClicked(MouseEvent e) {
+               
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                cadenaNumeros += "6";
+                jlNumero.setText(cadenaNumeros);
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                
+            }
+            
+        };
+        
+        btn6.addMouseListener(evento);
+        
+        
+    }
+    
+    private void eventoBtn7(){
+        MouseListener evento = new MouseListener(){
+            @Override
+            public void mouseClicked(MouseEvent e) {
+               
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                cadenaNumeros += "7";
+                jlNumero.setText(cadenaNumeros);
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                
+            }
+            
+        };
+        
+        btn7.addMouseListener(evento);
+        
+        
+    }
+    
+    private void eventoBtn8(){
+        MouseListener evento = new MouseListener(){
+            @Override
+            public void mouseClicked(MouseEvent e) {
+               
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                cadenaNumeros += "8";
+                jlNumero.setText(cadenaNumeros);
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                
+            }
+            
+        };
+        
+        btn8.addMouseListener(evento);
+        
+        
+    }
+    
+    private void eventoBtn9(){
+        MouseListener evento = new MouseListener(){
+            @Override
+            public void mouseClicked(MouseEvent e) {
+               
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                cadenaNumeros += "9";
+                jlNumero.setText(cadenaNumeros);
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                
+            }
+            
+        };
+        
+        btn9.addMouseListener(evento);
+        
         
     }
 }
