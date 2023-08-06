@@ -2,6 +2,8 @@
 package vista;
 
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JFrame;
@@ -90,40 +92,16 @@ public class Divisa extends JFrame{
     //Evento salir del item de la barra de menu
     private void eventoItemSalir(){
         
-        MouseListener evento = new MouseListener(){
+        ActionListener evento = new ActionListener(){
             @Override
-            public void mouseClicked(MouseEvent e) {
-                
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
+            public void actionPerformed(ActionEvent e) {
                 System.exit(0);
             }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-
-            }
-            
         };
-         
-        jItemSalir.addMouseListener(evento);
+        
+        jItemSalir.addActionListener(evento);
         
     }
-    
-    
-    
     
     
     
@@ -131,39 +109,20 @@ public class Divisa extends JFrame{
     //Evento abrir la ventana de divisa
     private void eventoItemEstandar(){
         
-        MouseListener evento = new MouseListener(){
+        ActionListener evento = new ActionListener(){
             @Override
-            public void mouseClicked(MouseEvent e) {
+            public void actionPerformed(ActionEvent e) {
                 
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
                 //Objeto de la clase Calc
                 Calc calc = new Calc();
                 
                 calc.setVisible(true);
                 dispose();
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
 
             }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-
-            }
-            
         };
-         
-        jItemCalEstandar.addMouseListener(evento);
+        
+        jItemCalEstandar.addActionListener(evento);
         
     }
     

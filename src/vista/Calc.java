@@ -6,6 +6,8 @@ import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JButton;
@@ -480,36 +482,14 @@ public class Calc extends JFrame{
     
     //Evento salir del item de la barra de menu
     private void eventoItemSalir(){
-        
-        MouseListener evento = new MouseListener(){
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-                System.exit(0);
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-
-            }
-            
+        ActionListener evento = new ActionListener(){
+          @Override
+          public void actionPerformed(ActionEvent e){
+              System.exit(0);
+          }
         };
-         
-        jItemSalir.addMouseListener(evento);
+        
+        jItemSalir.addActionListener(evento);
         
     }
     
@@ -520,391 +500,180 @@ public class Calc extends JFrame{
     //Evento abrir la ventana de divisa
     private void eventoItemDivisa(){
         
-        MouseListener evento = new MouseListener(){
-            @Override
-            public void mouseClicked(MouseEvent e) {
+        ActionListener evento = new ActionListener(){
+          @Override
+          public void actionPerformed(ActionEvent e){
+              
+              //Objeto de la clase divisa
+              Divisa divisa = new Divisa();
                 
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-                //Objeto de la clase divisa
-                Divisa divisa = new Divisa();
-                
-                divisa.setVisible(true);
-                dispose();
-                
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-
-            }
-            
+              divisa.setVisible(true);
+              dispose();
+          }
         };
+        
          
-        jItemCalDivisa.addMouseListener(evento);
+        jItemCalDivisa.addActionListener(evento);
         
     }
     
     private void eventoBtn0(){
-        MouseListener evento = new MouseListener(){
+        
+        ActionListener evento = new ActionListener(){
             @Override
-            public void mouseClicked(MouseEvent e) {
-               
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
+            public void actionPerformed(ActionEvent e){
+                
                 if(cadenaNumeros != ""){
                     cadenaNumeros += "0";
                     jlNumero.setText(cadenaNumeros);
                 }
                 
             }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-                
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-                
-            }
-            
         };
-        
-        btn0.addMouseListener(evento);
-        
-        
-    }
-    private void eventoBtn1(){
-        MouseListener evento = new MouseListener(){
-            @Override
-            public void mouseClicked(MouseEvent e) {
-               
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-                cadenaNumeros += "1";
-                jlNumero.setText(cadenaNumeros);
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-                
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-                
-            }
-            
-        };
-        
-        btn1.addMouseListener(evento);
-        
+       
+        btn0.addActionListener(evento);
         
     }
     
-    private void eventoBtn2(){
-        MouseListener evento = new MouseListener(){
+    
+    private void eventoBtn1(){
+        
+        ActionListener evento = new ActionListener(){
             @Override
-            public void mouseClicked(MouseEvent e) {
-               
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-                cadenaNumeros += "2";
+            public void actionPerformed(ActionEvent e) {
+                cadenaNumeros += "1";
                 jlNumero.setText(cadenaNumeros);
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-                
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-                
             }
             
         };
         
-        btn2.addMouseListener(evento);
+        btn1.addActionListener(evento);
+      
+    }
+    
+    private void eventoBtn2(){
+        
+        ActionListener evento = new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cadenaNumeros += "2";
+                jlNumero.setText(cadenaNumeros);
+
+            }
+            
+        };
+        
+        btn2.addActionListener(evento);
            
     }
     
     private void eventoBtn3(){
-        MouseListener evento = new MouseListener(){
+        
+        ActionListener evento = new ActionListener(){
             @Override
-            public void mouseClicked(MouseEvent e) {
-               
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
+            public void actionPerformed(ActionEvent e) {
+                
                 cadenaNumeros += "3";
                 jlNumero.setText(cadenaNumeros);
-            }
 
-            @Override
-            public void mouseReleased(MouseEvent e) {
-                
             }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-                
-            }
-            
         };
         
-        btn3.addMouseListener(evento);
-        
+        btn3.addActionListener(evento);
         
     }
     
     private void eventoBtn4(){
-        MouseListener evento = new MouseListener(){
-            @Override
-            public void mouseClicked(MouseEvent e) {
-               
-            }
 
+        ActionListener evento = new ActionListener(){
             @Override
-            public void mousePressed(MouseEvent e) {
+            public void actionPerformed(ActionEvent e) {
+                
                 cadenaNumeros += "4";
                 jlNumero.setText(cadenaNumeros);
-            }
 
-            @Override
-            public void mouseReleased(MouseEvent e) {
-                
             }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-                
-            }
-            
-        };
+        };        
         
-        btn4.addMouseListener(evento);
-        
+        btn4.addActionListener(evento);
         
     }
     
     private void eventoBtn5(){
-        MouseListener evento = new MouseListener(){
+        ActionListener evento = new ActionListener(){
             @Override
-            public void mouseClicked(MouseEvent e) {
-               
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
+            public void actionPerformed(ActionEvent e) {
+                
                 cadenaNumeros += "5";
                 jlNumero.setText(cadenaNumeros);
-            }
 
-            @Override
-            public void mouseReleased(MouseEvent e) {
-                
             }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-                
-            }
-            
         };
         
-        btn5.addMouseListener(evento);
-        
+        btn5.addActionListener(evento);
         
     }
     
     private void eventoBtn6(){
-        MouseListener evento = new MouseListener(){
+        
+        ActionListener evento = new ActionListener(){
             @Override
-            public void mouseClicked(MouseEvent e) {
-               
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
+            public void actionPerformed(ActionEvent e) {
+                
                 cadenaNumeros += "6";
                 jlNumero.setText(cadenaNumeros);
-            }
 
-            @Override
-            public void mouseReleased(MouseEvent e) {
-                
             }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-                
-            }
-            
         };
         
-        btn6.addMouseListener(evento);
-        
+        btn6.addActionListener(evento);
         
     }
     
     private void eventoBtn7(){
-        MouseListener evento = new MouseListener(){
+     
+        ActionListener evento = new ActionListener(){
             @Override
-            public void mouseClicked(MouseEvent e) {
-               
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
+            public void actionPerformed(ActionEvent e) {
+                
                 cadenaNumeros += "7";
                 jlNumero.setText(cadenaNumeros);
-            }
 
-            @Override
-            public void mouseReleased(MouseEvent e) {
-                
             }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-                
-            }
-            
-        };
-        
-        btn7.addMouseListener(evento);
-        
+        };        
+        btn7.addActionListener(evento);
         
     }
     
     private void eventoBtn8(){
-        MouseListener evento = new MouseListener(){
+        
+        ActionListener evento = new ActionListener(){
             @Override
-            public void mouseClicked(MouseEvent e) {
-               
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
+            public void actionPerformed(ActionEvent e) {
+                
                 cadenaNumeros += "8";
                 jlNumero.setText(cadenaNumeros);
-            }
 
-            @Override
-            public void mouseReleased(MouseEvent e) {
-                
             }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-                
-            }
-            
         };
         
-        btn8.addMouseListener(evento);
-        
+        btn8.addActionListener(evento);
         
     }
     
     private void eventoBtn9(){
-        MouseListener evento = new MouseListener(){
+        
+        ActionListener evento = new ActionListener(){
             @Override
-            public void mouseClicked(MouseEvent e) {
-               
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
+            public void actionPerformed(ActionEvent e) {
+                
                 cadenaNumeros += "9";
                 jlNumero.setText(cadenaNumeros);
-            }
 
-            @Override
-            public void mouseReleased(MouseEvent e) {
-                
             }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-                
-            }
-            
         };
         
-        btn9.addMouseListener(evento);
-        
+        btn9.addActionListener(evento);
         
     }
 }
