@@ -441,6 +441,7 @@ public class Calc extends JFrame{
         
         eventoSuma();
         eventoIgual();
+        eventoPunto();
     }
     
     //Etiqueta resultado
@@ -742,6 +743,34 @@ public class Calc extends JFrame{
         };
         
         btnIgual.addActionListener(evento);
+    }
+    
+    private void eventoPunto(){
+        
+        ActionListener evento = new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+                if(punto == true){
+                    
+                    if(cadenaNumeros == ""){
+                        cadenaNumeros = "0.";
+                    }
+                    else{
+                        cadenaNumeros += ".";
+                    }
+                
+                    jlNumero.setText(cadenaNumeros);
+                    
+                    punto = false;
+                }
+                
+            
+            }
+        };
+        
+        btnPunto.addActionListener(evento);
+        
     }
     
 }
