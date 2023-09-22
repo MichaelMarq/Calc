@@ -445,6 +445,7 @@ public class Calc extends JFrame{
         eventoCambiarSigno();
         eventoBorrar();
         eventoResta();
+        eventoMultiplicacion();
     }
     
     //Etiqueta resultado
@@ -745,7 +746,13 @@ public class Calc extends JFrame{
                     cadenaNumeros = String.valueOf(resultado);
                     operacion = "nula";
                 }
-                
+                else if(operacion.equals("multiplicar")){
+                    numero2 = Double.parseDouble(cadenaNumeros);
+                    resultado = numero1 * numero2;
+                    jlNumero.setText(String.format("%.2f", resultado));
+                    cadenaNumeros = String.valueOf(resultado);
+                    operacion = "nula";
+                }
                 jlResultado.setText("");
                 activado = true;                
 
@@ -844,6 +851,30 @@ public class Calc extends JFrame{
         };
         
         btnResta.addActionListener(evento);
+        
+    }
+    
+    private void eventoMultiplicacion(){
+        
+        ActionListener evento = new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+                if(activado == true){
+                    numero1 = Double.parseDouble(cadenaNumeros);
+                    jlResultado.setText(cadenaNumeros+" * ");
+                    cadenaNumeros = "";
+                    operacion = "multiplicar";
+                    
+                    activado = false;
+                    punto = true;
+                }
+                
+                
+            }
+        };
+        
+        btnMultiplicacion.addActionListener(evento);
         
     }
     
