@@ -442,6 +442,7 @@ public class Calc extends JFrame{
         eventoSuma();
         eventoIgual();
         eventoPunto();
+        eventoCambiarSigno();
     }
     
     //Etiqueta resultado
@@ -771,6 +772,28 @@ public class Calc extends JFrame{
         
         btnPunto.addActionListener(evento);
         
+    }
+    
+    private void eventoCambiarSigno(){
+      
+        ActionListener evento = new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+                if(cadenaNumeros.charAt(0)!= '-'){
+                    cadenaNumeros = "-"+cadenaNumeros;
+                }
+                else{
+                    cadenaNumeros = cadenaNumeros.substring(1,cadenaNumeros.length());
+                }
+                
+                jlNumero.setText(cadenaNumeros);
+
+            }
+        };
+        
+        btnCambiarSigno.addActionListener(evento);
+           
     }
     
 }
