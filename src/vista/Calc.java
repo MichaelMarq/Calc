@@ -440,6 +440,7 @@ public class Calc extends JFrame{
         eventoBtn9();
         
         eventoSuma();
+        eventoIgual();
     }
     
     //Etiqueta resultado
@@ -713,6 +714,34 @@ public class Calc extends JFrame{
         
         btnSuma.addActionListener(evento);
         
+    }
+    
+    private void eventoIgual(){
+       
+        ActionListener evento = new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                double numero2 = 0;
+                
+                if(operacion.equals("nula")){
+                    jlNumero.setText(cadenaNumeros);
+                }
+                //Error java.lang.NumberFormatException: empty String. Al pasar una cadena vacia
+                else if(operacion.equals("sumar")){
+                    numero2 = Double.parseDouble(cadenaNumeros);
+                    resultado = numero1 + numero2;
+                    jlNumero.setText(String.format("%.2f", resultado));
+                    cadenaNumeros = String.valueOf(resultado);
+                    operacion = "nula";
+                }
+                
+                jlResultado.setText("");
+                activado = true;                
+
+            }
+        };
+        
+        btnIgual.addActionListener(evento);
     }
     
 }
