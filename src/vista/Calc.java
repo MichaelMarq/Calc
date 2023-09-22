@@ -443,6 +443,7 @@ public class Calc extends JFrame{
         eventoIgual();
         eventoPunto();
         eventoCambiarSigno();
+        eventoBorrar();
     }
     
     //Etiqueta resultado
@@ -794,6 +795,24 @@ public class Calc extends JFrame{
         
         btnCambiarSigno.addActionListener(evento);
            
+    }
+    
+    private void eventoBorrar(){
+        ActionListener evento = new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+                int size = cadenaNumeros.length();
+                if(size > 0){
+                    cadenaNumeros = cadenaNumeros.substring(0, size-1);
+                    jlNumero.setText(cadenaNumeros);
+                }
+                    
+            }
+        };
+        
+        btnBorrar.addActionListener(evento);
+        
     }
     
 }
