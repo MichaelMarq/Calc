@@ -8,8 +8,6 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -31,8 +29,13 @@ public class Calc extends JFrame{
     private JMenuItem jItemCalEstandar,jItemCalDivisa,jItemSalir;
     private GridBagLayout design;
     private GridBagConstraints c;
-    private String cadenaNumeros = "";
     
+    private String cadenaNumeros = "";
+    private String operacion = "nula";
+    private double numero1=0;
+    private double resultado = 0;
+    private boolean activado = true;
+    private boolean punto = true;
     //Constructor
     
     public Calc(){
@@ -435,6 +438,8 @@ public class Calc extends JFrame{
         eventoBtn7();
         eventoBtn8();
         eventoBtn9();
+        
+        eventoSuma();
     }
     
     //Etiqueta resultado
@@ -526,6 +531,7 @@ public class Calc extends JFrame{
                 if(cadenaNumeros != ""){
                     cadenaNumeros += "0";
                     jlNumero.setText(cadenaNumeros);
+                    activado = true;
                 }
                 
             }
@@ -543,6 +549,7 @@ public class Calc extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 cadenaNumeros += "1";
                 jlNumero.setText(cadenaNumeros);
+                activado = true;
             }
             
         };
@@ -558,6 +565,7 @@ public class Calc extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 cadenaNumeros += "2";
                 jlNumero.setText(cadenaNumeros);
+                activado = true;
 
             }
             
@@ -575,6 +583,7 @@ public class Calc extends JFrame{
                 
                 cadenaNumeros += "3";
                 jlNumero.setText(cadenaNumeros);
+                activado = true;
 
             }
         };
@@ -591,6 +600,7 @@ public class Calc extends JFrame{
                 
                 cadenaNumeros += "4";
                 jlNumero.setText(cadenaNumeros);
+                activado = true;
 
             }
         };        
@@ -606,6 +616,7 @@ public class Calc extends JFrame{
                 
                 cadenaNumeros += "5";
                 jlNumero.setText(cadenaNumeros);
+                activado = true;
 
             }
         };
@@ -622,6 +633,7 @@ public class Calc extends JFrame{
                 
                 cadenaNumeros += "6";
                 jlNumero.setText(cadenaNumeros);
+                activado = true;
 
             }
         };
@@ -638,6 +650,7 @@ public class Calc extends JFrame{
                 
                 cadenaNumeros += "7";
                 jlNumero.setText(cadenaNumeros);
+                activado = true;
 
             }
         };        
@@ -653,6 +666,7 @@ public class Calc extends JFrame{
                 
                 cadenaNumeros += "8";
                 jlNumero.setText(cadenaNumeros);
+                activado = true;
 
             }
         };
@@ -669,6 +683,7 @@ public class Calc extends JFrame{
                 
                 cadenaNumeros += "9";
                 jlNumero.setText(cadenaNumeros);
+                activado = true;
 
             }
         };
@@ -676,4 +691,28 @@ public class Calc extends JFrame{
         btn9.addActionListener(evento);
         
     }
+    
+    private void eventoSuma(){
+        
+        ActionListener evento = new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+                if(activado == true){
+                    numero1 = Double.parseDouble(cadenaNumeros);
+                    jlResultado.setText(cadenaNumeros+" + ");
+                    cadenaNumeros = "";
+                    operacion = "sumar";
+                    activado = false;
+                    punto = true;
+                }
+                
+                
+            }
+        };
+        
+        btnSuma.addActionListener(evento);
+        
+    }
+    
 }
