@@ -448,6 +448,7 @@ public class Calc extends JFrame{
         eventoMultiplicacion();
         eventoDivision();
         eventoRaiz();
+        eventoC();
     }
     
     //Etiqueta resultado
@@ -943,6 +944,30 @@ public class Calc extends JFrame{
         };
         
         btnRaiz.addActionListener(evento);
+        
+    }
+    
+    private void eventoC(){
+        
+        ActionListener evento = new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+                jlResultado.setText("");
+                jlNumero.setText("0");
+                
+                cadenaNumeros = "";
+                operacion = "nula";
+                numero1 = 0;
+                resultado = 0;
+                activado = true;
+                punto = true;
+                            
+               
+            }
+        };
+        
+        btnC.addActionListener(evento);
         
     }
     
