@@ -538,7 +538,13 @@ public class Calc extends JFrame{
             public void actionPerformed(ActionEvent e){
                 
                 if(cadenaNumeros != ""){
-                    cadenaNumeros += "0";
+                    
+                    if(jlNumero.getText().equals("0")){
+                        cadenaNumeros = "0";
+                    }
+                    else{
+                        cadenaNumeros += 0;
+                    }
                     jlNumero.setText(cadenaNumeros);
                     activado = true;
                 }
@@ -556,7 +562,13 @@ public class Calc extends JFrame{
         ActionListener evento = new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                cadenaNumeros += "1";
+                if(jlNumero.getText().equals("0")){
+                    cadenaNumeros = "1";
+                }
+                else{
+                    cadenaNumeros += 1;
+                }
+                
                 jlNumero.setText(cadenaNumeros);
                 activado = true;
             }
@@ -572,7 +584,13 @@ public class Calc extends JFrame{
         ActionListener evento = new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                cadenaNumeros += "2";
+                if(jlNumero.getText().equals("0")){
+                    cadenaNumeros = "2";
+                }
+                else{
+                    cadenaNumeros += 2;
+                }
+                
                 jlNumero.setText(cadenaNumeros);
                 activado = true;
 
@@ -590,7 +608,13 @@ public class Calc extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 
-                cadenaNumeros += "3";
+                if(jlNumero.getText().equals("0")){
+                    cadenaNumeros = "3";
+                }
+                else{
+                    cadenaNumeros += 3;
+                }
+                
                 jlNumero.setText(cadenaNumeros);
                 activado = true;
 
@@ -607,7 +631,13 @@ public class Calc extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 
-                cadenaNumeros += "4";
+                if(jlNumero.getText().equals("0")){
+                    cadenaNumeros = "4";
+                }
+                else{
+                    cadenaNumeros += 4;
+                }
+                
                 jlNumero.setText(cadenaNumeros);
                 activado = true;
 
@@ -623,7 +653,13 @@ public class Calc extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 
-                cadenaNumeros += "5";
+                if(jlNumero.getText().equals("0")){
+                    cadenaNumeros = "5";
+                }
+                else{
+                    cadenaNumeros += 5;
+                }
+                
                 jlNumero.setText(cadenaNumeros);
                 activado = true;
 
@@ -640,7 +676,13 @@ public class Calc extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 
-                cadenaNumeros += "6";
+                if(jlNumero.getText().equals("0")){
+                    cadenaNumeros = "6";
+                }
+                else{
+                    cadenaNumeros += 6;
+                }
+                
                 jlNumero.setText(cadenaNumeros);
                 activado = true;
 
@@ -657,7 +699,13 @@ public class Calc extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 
-                cadenaNumeros += "7";
+                if(jlNumero.getText().equals("0")){
+                    cadenaNumeros = "7";
+                }
+                else{
+                    cadenaNumeros += 7;
+                }
+                
                 jlNumero.setText(cadenaNumeros);
                 activado = true;
 
@@ -673,7 +721,13 @@ public class Calc extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 
-                cadenaNumeros += "8";
+                if(jlNumero.getText().equals("0")){
+                    cadenaNumeros = "8";
+                }
+                else{
+                    cadenaNumeros += 8;
+                }
+                
                 jlNumero.setText(cadenaNumeros);
                 activado = true;
 
@@ -690,7 +744,13 @@ public class Calc extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 
-                cadenaNumeros += "9";
+                if(jlNumero.getText().equals("0")){
+                    cadenaNumeros = "9";
+                }
+                else{
+                    cadenaNumeros += 9;
+                }
+                
                 jlNumero.setText(cadenaNumeros);
                 activado = true;
 
@@ -831,20 +891,16 @@ public class Calc extends JFrame{
                 int size = cadenaNumeros.length();
                 
                 if(size > 0){
-                    cadenaNumeros = cadenaNumeros.substring(0, size-1);
-                    
-                    if(cadenaNumeros.length()== 0){
-                        jlNumero.setText("0");
+                    if(size == 1){
+                        cadenaNumeros = "0";
                     }
                     else{
-                        jlNumero.setText(cadenaNumeros);
+                        cadenaNumeros = cadenaNumeros.substring(0, size-1);
                     }
                     
+                    jlNumero.setText(cadenaNumeros);
+    
                 }
-                else{
-                    jlNumero.setText("0");
-                }      
-                
             }
         };
         
