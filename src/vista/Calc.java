@@ -32,7 +32,7 @@ public class Calc extends JFrame{
     
     private String cadenaNumeros = "";
     private String operacion = "nula";
-    private double numero1=0;
+    private double numero1 = 0;
     private double resultado = 0;
     private boolean activado = true;
     private boolean punto = true;
@@ -447,6 +447,7 @@ public class Calc extends JFrame{
         eventoResta();
         eventoMultiplicacion();
         eventoDivision();
+        eventoRaiz();
     }
     
     //Etiqueta resultado
@@ -827,11 +828,22 @@ public class Calc extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 
                 int size = cadenaNumeros.length();
+                
                 if(size > 0){
                     cadenaNumeros = cadenaNumeros.substring(0, size-1);
-                    jlNumero.setText(cadenaNumeros);
-                }
                     
+                    if(cadenaNumeros.length()== 0){
+                        jlNumero.setText("0");
+                    }
+                    else{
+                        jlNumero.setText(cadenaNumeros);
+                    }
+                    
+                }
+                else{
+                    jlNumero.setText("0");
+                }      
+                
             }
         };
         
@@ -908,6 +920,29 @@ public class Calc extends JFrame{
         };
         
         btnDivision.addActionListener(evento);
+        
+    }
+    
+    private void eventoRaiz(){
+        
+        ActionListener evento = new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                            
+                numero1 = Double.parseDouble(cadenaNumeros);
+                jlResultado.setText("sqrt("+cadenaNumeros+")");
+                cadenaNumeros = "";
+                    
+                resultado = Math.sqrt(numero1);
+                jlNumero.setText(String.format("%.2f", resultado));
+                cadenaNumeros = String.valueOf(resultado);
+                    
+                punto = true;
+               
+            }
+        };
+        
+        btnRaiz.addActionListener(evento);
         
     }
     
