@@ -32,6 +32,10 @@ public class Divisa extends JFrame{
     private JLabel jlDivisa1,jlDivisa2,jlCambio,jlCambio2;
     private JComboBox comboDivisa,comboDivisa2;
     private JButton btnC,btnBorrar,btn7,btn8,btn9,btn4,btn5,btn6,btn1,btn2,btn3,btn0,btnPunto;
+    private String divisa []= {"Estados Unidos - Dólar","Perú - Sol","Europa - Euro"};
+    private String moneda = "";
+    private String moneda2 = "";
+    private String cantidad = "";
 
     
     //Constructor
@@ -169,7 +173,7 @@ public class Divisa extends JFrame{
         c.gridheight = 1;
         c.fill = GridBagConstraints.BOTH;
         
-        c.insets = new Insets(15, 15, 0, 5);
+        c.insets = new Insets(15, 15, 0, 10);
         c.weightx = 0.5;
         c.weighty = 0.5;
         
@@ -198,7 +202,7 @@ public class Divisa extends JFrame{
     
     //Agregar combo divisa 1
     private void agregarComboDivisa(){
-        comboDivisa = new JComboBox();
+        comboDivisa = new JComboBox(divisa);
         comboDivisa.setFont(new Font("Arial", 0, 14));
         
         
@@ -231,7 +235,7 @@ public class Divisa extends JFrame{
         
         c.fill = GridBagConstraints.BOTH;
         c.anchor = GridBagConstraints.CENTER;
-        c.insets = new Insets(15, 15, 0, 5);
+        c.insets = new Insets(15, 15, 0, 10);
         c.weightx = 0.5;
         c.weighty = 0.5;
         
@@ -261,7 +265,7 @@ public class Divisa extends JFrame{
     
     //Agregar combo divisa 2
     private void agregarComboDivisa2(){
-        comboDivisa2 = new JComboBox();
+        comboDivisa2 = new JComboBox(divisa);
         comboDivisa2.setFont(new Font("Arial", 0, 14));
         
         
@@ -490,6 +494,243 @@ public class Divisa extends JFrame{
         c.weighty = 0.5;
         panel.add(btnPunto, c);
         
+        //Llamada a los eventos
+        eventoCombo1();
+        eventoCombo2();
+        
+        eventoBtn1();
+        eventoBtn2();
+        eventoBtn3();
+        eventoBtn4();
+        eventoBtn5();
+        eventoBtn6();
+        eventoBtn7();
+        eventoBtn8();
+        eventoBtn9();
+        eventoBtn0();
 
+    }
+    
+    
+    //Eventos
+    
+    //Combo 1
+    
+    private void eventoCombo1(){
+        
+        ActionListener evento = new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                moneda = (String) comboDivisa.getSelectedItem();
+                
+                if(moneda.equals("Estados Unidos - Dólar")){
+                    jlDivisa1.setText("$");
+                }
+                else if(moneda.equals("Perú - Sol")){
+                    jlDivisa1.setText("S/");
+                }
+                else if(moneda.equals("Europa - Euro")){
+                    jlDivisa1.setText("€");
+                }
+
+                            
+               
+            }
+        };
+        
+        comboDivisa.addActionListener(evento);
+        
+    }
+    
+    //Combo 2
+    private void eventoCombo2(){
+        
+        ActionListener evento = new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                moneda2 = (String) comboDivisa2.getSelectedItem();
+                
+                if(moneda2.equals("Estados Unidos - Dólar")){
+                    jlDivisa2.setText("$");
+                }
+                else if(moneda2.equals("Perú - Sol")){
+                    jlDivisa2.setText("S/");
+                }
+                else if(moneda2.equals("Europa - Euro")){
+                    jlDivisa2.setText("€");
+                }
+        
+               
+            }
+        };
+        
+        comboDivisa2.addActionListener(evento);
+        
+    }
+    
+    //Boton 1
+    
+    private void eventoBtn1(){
+        
+        ActionListener evento = new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+                cantidad += "1";
+                jlCambio.setText(cantidad);
+
+            }
+        };
+        
+        btn1.addActionListener(evento);
+        
+    }
+    
+    private void eventoBtn2(){
+        
+        ActionListener evento = new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+                cantidad += "2";
+                jlCambio.setText(cantidad);
+
+            }
+        };
+        
+        btn2.addActionListener(evento);
+        
+    }
+    
+    
+    private void eventoBtn3(){
+        
+        ActionListener evento = new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+                cantidad += "3";
+                jlCambio.setText(cantidad);
+
+            }
+        };
+        
+        btn3.addActionListener(evento);
+        
+    }
+    
+    private void eventoBtn4(){
+        
+        ActionListener evento = new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+                cantidad += "4";
+                jlCambio.setText(cantidad);
+
+            }
+        };
+        
+        btn4.addActionListener(evento);
+        
+    }
+    
+    private void eventoBtn5(){
+        
+        ActionListener evento = new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+                cantidad += "5";
+                jlCambio.setText(cantidad);
+
+            }
+        };
+        
+        btn5.addActionListener(evento);
+        
+    }
+    
+    private void eventoBtn6(){
+        
+        ActionListener evento = new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+                cantidad += "6";
+                jlCambio.setText(cantidad);
+
+            }
+        };
+        
+        btn6.addActionListener(evento);
+        
+    }
+    
+    private void eventoBtn7(){
+        
+        ActionListener evento = new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+                cantidad += "7";
+                jlCambio.setText(cantidad);
+
+            }
+        };
+        
+        btn7.addActionListener(evento);
+        
+    }
+    
+    private void eventoBtn8(){
+        
+        ActionListener evento = new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+                cantidad += "8";
+                jlCambio.setText(cantidad);
+
+            }
+        };
+        
+        btn8.addActionListener(evento);
+        
+    }
+    
+    private void eventoBtn9(){
+        
+        ActionListener evento = new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+                cantidad += "9";
+                jlCambio.setText(cantidad);
+
+            }
+        };
+        
+        btn9.addActionListener(evento);
+        
+    }
+    
+    private void eventoBtn0(){
+        
+        ActionListener evento = new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+                if(cantidad != ""){
+                    cantidad += "0";
+                    jlCambio.setText(cantidad);
+                }
+
+
+            }
+        };
+        
+        btn0.addActionListener(evento);
+        
     }
 }
