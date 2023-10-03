@@ -36,6 +36,7 @@ public class Divisa extends JFrame{
     private String moneda = "";
     private String moneda2 = "";
     private String cantidad = "";
+    private double dinero = 0,cambio = 0;
 
     
     //Constructor
@@ -532,9 +533,9 @@ public class Divisa extends JFrame{
                 else if(moneda.equals("Europa - Euro")){
                     jlDivisa1.setText("€");
                 }
+                
+                obtenerDinero();
 
-                            
-               
             }
         };
         
@@ -559,8 +560,9 @@ public class Divisa extends JFrame{
                 else if(moneda2.equals("Europa - Euro")){
                     jlDivisa2.setText("€");
                 }
+                
+                obtenerDinero();
         
-               
             }
         };
         
@@ -578,6 +580,7 @@ public class Divisa extends JFrame{
                 
                 cantidad += "1";
                 jlCambio.setText(cantidad);
+                obtenerDinero();
 
             }
         };
@@ -594,6 +597,7 @@ public class Divisa extends JFrame{
                 
                 cantidad += "2";
                 jlCambio.setText(cantidad);
+                obtenerDinero();
 
             }
         };
@@ -611,6 +615,7 @@ public class Divisa extends JFrame{
                 
                 cantidad += "3";
                 jlCambio.setText(cantidad);
+                obtenerDinero();
 
             }
         };
@@ -627,6 +632,7 @@ public class Divisa extends JFrame{
                 
                 cantidad += "4";
                 jlCambio.setText(cantidad);
+                obtenerDinero();
 
             }
         };
@@ -643,6 +649,7 @@ public class Divisa extends JFrame{
                 
                 cantidad += "5";
                 jlCambio.setText(cantidad);
+                obtenerDinero();
 
             }
         };
@@ -659,6 +666,7 @@ public class Divisa extends JFrame{
                 
                 cantidad += "6";
                 jlCambio.setText(cantidad);
+                obtenerDinero();
 
             }
         };
@@ -675,6 +683,7 @@ public class Divisa extends JFrame{
                 
                 cantidad += "7";
                 jlCambio.setText(cantidad);
+                obtenerDinero();
 
             }
         };
@@ -691,6 +700,7 @@ public class Divisa extends JFrame{
                 
                 cantidad += "8";
                 jlCambio.setText(cantidad);
+                obtenerDinero();
 
             }
         };
@@ -707,6 +717,7 @@ public class Divisa extends JFrame{
                 
                 cantidad += "9";
                 jlCambio.setText(cantidad);
+                obtenerDinero();
 
             }
         };
@@ -724,6 +735,7 @@ public class Divisa extends JFrame{
                 if(cantidad != ""){
                     cantidad += "0";
                     jlCambio.setText(cantidad);
+                    obtenerDinero();
                 }
 
 
@@ -733,4 +745,46 @@ public class Divisa extends JFrame{
         btn0.addActionListener(evento);
         
     }
+    
+    
+    //Calculo para la conversion de divisas
+    private void obtenerDinero(){
+        cantidad = jlCambio.getText();
+        dinero = Double.parseDouble(cantidad);
+        
+        cambioDivisa();
+        
+        dinero *= cambio;
+        
+        jlCambio2.setText(String.format("%.2f", dinero));
+    }
+    
+    
+    private void cambioDivisa(){
+        
+        if(moneda.equals(moneda2)){
+            cambio = 1;
+        }
+        else if(moneda.equals("Estados Unidos - Dólar") && moneda2.equals("Perú - Sol")){
+            cambio = 3.79;
+        }
+        else if(moneda.equals("Estados Unidos - Dólar") && moneda2.equals("Europa - Euro")){
+            cambio = 0.95;
+        }
+        else if(moneda.equals("Perú - Sol") && moneda2.equals("Estados Unidos - Dólar")){
+            cambio = 0.26;
+        }
+        else if(moneda.equals("Perú - Sol") && moneda2.equals("Europa - Euro")){
+            cambio = 0.25;
+        }
+        else if(moneda.equals("Europa - Euro") && moneda2.equals("Estados Unidos - Dólar")){
+            cambio = 1.04;
+        }
+        else if(moneda.equals("Europa - Euro") && moneda2.equals("Perú - Sol")){
+            cambio = 3.97;
+        }
+        
+        
+    }
+    
 }
