@@ -122,7 +122,7 @@ public class Calc extends JFrame{
         
         btnC = new JButton("C");
         btnC.setFont(new Font("Arial", 0, 18));
-        btnC.setBackground(new Color(255, 255, 204));
+        
         
         c.gridx = 0;
         c.gridy = 2;
